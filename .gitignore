@@ -4,3 +4,13 @@ __pycache__/
 Question2/data/
 *.npy
 Question2/kaggle_push/
+Question2/kaggle_logs/
+Question2/kaggle_output/
+Question2/kaggle_code/
+Question2/kaggle_phase1/
+Question2/kaggle_phase2/
+Question2/outputs/_pdf_extract.txt
+Question2/outputs/river_raw.bin
+Question2/outputs/river_diagram.png
+report/_draft_text.txt
+report/preview/
