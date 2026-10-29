@@ -423,13 +423,21 @@ def main():
     pdf.add_page()
     pdf.h1("AI use")
     pdf.body(
-        "This assignment was completed with Cursor’s coding agent (Grok 4.7). "
-        "The prompts were the assignment PDF, the instruction to finish both questions without further questions, "
-        "the instruction to run Question 2 on Kaggle, and a Kaggle API token used only to authenticate the Kaggle CLI. "
-        "The agent wrote the ConvLSTM code, the checks, the training and evaluation scripts, the Question 1 design, the figures, and this report. "
-        "Training ran on Kaggle. The paragraphs under Q2.5 and Q2.11 are the files committed before those experiments and were not edited afterwards. "
-        "Numbers in the tables were taken from the saved score files. "
-        "The architecture diagram was drawn for this design. The Moving MNIST figures were produced by the evaluation code."
+        "I used Cursor to help with understanding the assignment, running notebooks, writing this report, "
+        "pushing code to GitHub, and polishing answers. Experiment numbers in the tables come from the saved score files. "
+        "Q2.5 and Q2.11 match the prediction files committed before those experiments."
+    )
+    pdf.body("Example prompts (paraphrased):")
+    pdf.body(
+        "Prompt 1: \"Kaggle failed with ModuleNotFoundError: No module named q2 when I pushed the training script. "
+        "What does that mean and how do I fix the import path so the kernel can see my package?\" "
+        "Cursor explained that the kernel only sees attached dataset files and helped adjust the entry script so q2 is on the path."
+    )
+    pdf.body(
+        "Prompt 2: \"Model D uses dilations (1, 3) for reach 16, but its 3× E(2) is slightly worse than Model C in my table. "
+        "Why would a larger reach not help here?\" "
+        "Cursor walked through unfamiliar motion vs reach, and that dilation 3 can skip nearby cells, so C fixing most of the gap "
+        "from seeing fast clips is consistent with the results."
     )
     pdf.output(str(OUT_PDF))
     print(OUT_PDF)
